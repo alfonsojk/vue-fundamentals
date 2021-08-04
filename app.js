@@ -6,7 +6,13 @@ const app = Vue.createApp({
             confirmedName:''
         };
     },
-
+    watch:{
+        counter(value){
+            if(value > 50){
+                this.counter = 0;
+            }
+        }
+    },
     methods:{
         confirmInput(){
             this.confirmedName = this.name
@@ -22,6 +28,9 @@ const app = Vue.createApp({
         },
         reduce(num){
             this.counter = this.counter - num;
+        },
+        resetInput(){
+            this.name=''
         },
     }
 });
